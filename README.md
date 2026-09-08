@@ -96,6 +96,12 @@ acryl-dsh-editor-plugin/
 └── LICENSE
 ```
 
+## Where it's listed
+
+- **DSH Store (featured example):** https://acryl.dev/store/packages/acryl-dsh-editor-plugin — featured at the top of the directory and used as the worked example in the [publishing guide](https://acryl.dev/store/publishing).
+- **npm:** https://www.npmjs.com/package/acryl-dsh-editor-plugin — tagged `dsh-plugin` + `acryl-package`, which is how the store and the DSH Desktop market catalog discover it.
+- **Publishing guide:** https://acryl.dev/store/publishing — how to publish your own DSH plugin, using this repository as the reference.
+
 ## License
 
 [MIT](LICENSE)
