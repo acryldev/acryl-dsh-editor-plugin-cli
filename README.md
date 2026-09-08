@@ -26,7 +26,7 @@ The plugin is a **standard Cordis plugin (npm package)**. It installs with one `
 ### From npm (recommended)
 
 ```bash
-dsh plugin --profile web add dsh-editor
+dsh plugin --profile web add acryl-dsh-editor-plugin
 ```
 
 ### From GitHub
@@ -48,7 +48,7 @@ After installing, **restart DSH** (`dsh web --profile web`). A **Files** tab app
 ACRYL Desktop hosts the same DSH plugin runtime, so the same command works from its built-in terminal — omit the profile flag and the Desktop's active profile is used:
 
 ```bash
-dsh plugin add dsh-editor
+dsh plugin add acryl-dsh-editor-plugin
 ```
 
 Or install from a local checkout while developing:

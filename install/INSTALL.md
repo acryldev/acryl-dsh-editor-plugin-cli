@@ -7,7 +7,7 @@ DSH Editor is distributed as a **standard Cordis plugin (npm package)**. It inst
 ### From npm (recommended)
 
 ```bash
-dsh plugin --profile web add dsh-editor
+dsh plugin --profile web add acryl-dsh-editor-plugin
 ```
 
 ### From GitHub
@@ -29,7 +29,7 @@ After installing, **restart DSH** (`dsh web --profile web`). A **Files** tab app
 ACRYL Desktop hosts the same DSH plugin runtime. Run the same command from the Desktop's built-in terminal — the Desktop's active profile is used:
 
 ```bash
-dsh plugin add dsh-editor
+dsh plugin add acryl-dsh-editor-plugin
 ```
 
 Or, while developing, install from a local checkout:
