@@ -1,0 +1,13 @@
+# dsh-editor bundle patch.
+#
+# When installed through the DSH plugin CLI:
+#
+#   dsh plugin --profile <name> add dsh-editor@<version>
+#
+# the command appends `dsh-editor` to `dsh.profile.bundles`, and the
+# profile boot merges THIS patch (one `insert` of the host-half row) exactly
+# like a manual cordis.patch.yml mount line. No profile file edits needed.
+
+- insert:
+    - id: dsh-editor
+      name: 'dsh-editor'
