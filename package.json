@@ -23,6 +23,22 @@
   "engines": {
     "node": ">=20"
   },
+  "keywords": [
+    "acryl-package",
+    "dsh-plugin",
+    "dsh",
+    "editor",
+    "monaco"
+  ],
+  "acryl": {
+    "schemaVersion": 1,
+    "artifacts": {
+      "plugins": [
+        "./lib/index.js",
+        "./lib/client.js"
+      ]
+    }
+  },
   "dsh": {
     "bundle": {
       "patch": "./cordis.patch.yml"
