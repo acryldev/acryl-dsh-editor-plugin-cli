@@ -1,6 +1,6 @@
 {
   "name": "acryl-dsh-editor-plugin",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "DSH web plugin: a VS Code-style code editor view (file tree, Monaco, ripgrep search/replace, Markdown preview, git diff).",
   "type": "module",
   "repository": {
@@ -70,7 +70,11 @@
     "@deepseek-ai/dsh-client-ui-settings": "^0.1.0-rc.6"
   },
   "peerDependenciesMeta": {
-    "react": { "optional": true },
-    "react-dom": { "optional": true }
+    "react": {
+      "optional": true
+    },
+    "react-dom": {
+      "optional": true
+    }
   }
 }

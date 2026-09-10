@@ -1,13 +1,15 @@
-# dsh-editor bundle patch.
+# acryl-dsh-editor-plugin bundle patch.
 #
-# When installed through the DSH plugin CLI:
+# When installed through the DSH plugin CLI, or the ACRYL Desktop plugin market:
 #
 #   dsh plugin --profile <name> add acryl-dsh-editor-plugin@<version>
 #
-# the command appends `acryl-dsh-editor-plugin` to `dsh.profile.bundles`, and the
-# profile boot merges THIS patch (one `insert` of the host-half row) exactly
-# like a manual cordis.patch.yml mount line. No profile file edits needed.
+# the package is appended to `dsh.profile.bundles`, and profile boot merges THIS
+# patch (one `insert` of the host-half row) exactly like a manual
+# cordis.patch.yml mount line. The row `name` must be the resolvable package
+# name so the Loader can import both halves; the browser half is discovered
+# from that package name via `exports["./client"]`. No profile file edits needed.
 
 - insert:
     - id: dsh-editor
-      name: 'dsh-editor'
+      name: 'acryl-dsh-editor-plugin'
