@@ -1,11 +1,11 @@
 {
-  "name": "acryl-dsh-editor-plugin",
-  "version": "0.2.6",
-  "description": "DSH web plugin: a VS Code-style code editor view (file tree, Monaco, ripgrep search/replace, Markdown preview, git diff).",
+  "name": "acryl-dsh-editor-plugin-cli",
+  "version": "0.1.0",
+  "description": "DSH TUI plugin: a native /files command - browse and view files from acryl-cli's own terminal UI.",
   "type": "module",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/acryldev/acryl-dsh-editor-plugin.git"
+    "url": "git+https://github.com/acryldev/acryl-dsh-editor-plugin-cli.git"
   },
   "publishConfig": {
     "access": "public"
@@ -14,9 +14,6 @@
   "exports": {
     ".": {
       "default": "./lib/index.js"
-    },
-    "./client": {
-      "default": "./lib/client.js"
     },
     "./package.json": "./package.json"
   },
@@ -28,53 +25,27 @@
     "dsh-plugin",
     "dsh",
     "editor",
-    "monaco"
+    "tui",
+    "cli"
   ],
   "acryl": {
     "schemaVersion": 1,
     "artifacts": {
       "plugins": [
-        "./lib/index.js",
-        "./lib/client.js"
+        "./lib/index.js"
       ]
     }
   },
   "dsh": {
     "bundle": {
       "patch": "./cordis.patch.yml"
-    },
-    "client": {
-      "inject": [
-        "@deepseek-ai/dsh-client-runtime",
-        "@deepseek-ai/dsh-client-ui-theme",
-        "@deepseek-ai/dsh-client-ui-conversation",
-        "@deepseek-ai/dsh-client-ui-settings"
-      ],
-      "platform": "web"
     }
   },
   "files": [
     "lib/index.js",
-    "lib/client.js",
     "cordis.patch.yml",
     "README.md",
     "LICENSE"
   ],
-  "license": "MIT",
-  "peerDependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "@deepseek-ai/dsh-client-runtime": "^0.1.0-rc.6",
-    "@deepseek-ai/dsh-client-ui-theme": "^0.1.0-rc.6",
-    "@deepseek-ai/dsh-client-ui-conversation": "^0.1.0-rc.6",
-    "@deepseek-ai/dsh-client-ui-settings": "^0.1.0-rc.6"
-  },
-  "peerDependenciesMeta": {
-    "react": {
-      "optional": true
-    },
-    "react-dom": {
-      "optional": true
-    }
-  }
+  "license": "MIT"
 }

@@ -1,15 +1,20 @@
-# acryl-dsh-editor-plugin bundle patch.
+# acryl-dsh-editor-plugin-cli bundle patch.
 #
-# When installed through the DSH plugin CLI, or the ACRYL Desktop plugin market:
+# When installed through the DSH plugin CLI:
 #
-#   dsh plugin --profile <name> add acryl-dsh-editor-plugin@<version>
+#   dsh plugin --profile <name> add acryl-dsh-editor-plugin-cli@<version>
 #
-# the package is appended to `dsh.profile.bundles`, and profile boot merges THIS
-# patch (one `insert` of the host-half row) exactly like a manual
-# cordis.patch.yml mount line. The row `name` must be the resolvable package
-# name so the Loader can import both halves; the browser half is discovered
-# from that package name via `exports["./client"]`. No profile file edits needed.
+# the package is appended to `dsh.profile.bundles`, and profile boot merges
+# THIS patch (one `insert` of this row) exactly like a manual cordis.patch.yml
+# mount line. No profile file edits needed.
+#
+# There is no browser half to discover here, unlike the Web sibling plugin
+# (acryl-dsh-editor-plugin-web): this row's own `apply()` (lib/index.js)
+# registers a real `/files` TUI command directly against `tuiCommands`
+# (acryl-cli's own presentation-slot extension point, spec 034 T009) - the CLI
+# and its Cordis Loader tree share one process, so there is no client bundle
+# to compose or serve.
 
 - insert:
-    - id: dsh-editor
-      name: 'acryl-dsh-editor-plugin'
+    - id: dsh-editor-cli
+      name: 'acryl-dsh-editor-plugin-cli'
