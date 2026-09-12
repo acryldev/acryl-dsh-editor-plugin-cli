@@ -34,7 +34,8 @@
       "plugins": [
         "./lib/index.js"
       ]
-    }
+    },
+    "surfaces": ["tui"]
   },
   "dsh": {
     "bundle": {
