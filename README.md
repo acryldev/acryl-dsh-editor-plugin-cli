@@ -1,8 +1,8 @@
 # DSH Editor (CLI)
 
 A native `/files` command for [DeepSeek Harness (DSH)](https://github.com/deepseek-ai/deepseek-harness)'s
-terminal surface (`acryl-cli`) - browse and view files without leaving the
-TUI.
+terminal surface (`acryl-cli`) - browse, view, and edit files without
+leaving the TUI.
 
 This is the TUI-native sibling of
 [`acryl-dsh-editor-plugin-web`](https://github.com/acryldev/acryl-dsh-editor-plugin-web),
@@ -10,18 +10,29 @@ built for `acryl-cli`'s own presentation-slot extension point
 (`tuiCommands`, spec 034 T009) rather than a browser client bundle. There is
 no Host/Client split here: the CLI and its Cordis Loader tree share one
 process, so this plugin's own `apply(ctx)` both registers the `/files`
-command and reads files directly - no wire protocol to design.
+command and reads/writes files directly - no wire protocol to design.
 
-## Features (v1)
+## Features (v2)
 
-- **File tree** - browse from your home directory, `..` to go up, Enter to
-  open a folder or file.
-- **File viewer** - scrollable, read-only, line-numbered.
+- **File tree** - browse from your home directory, directories-first
+  sorting, `..` to go up. Vim-style `h`/`j`/`k`/`l` work alongside arrows.
+- **Filter** - `/` starts an incremental, case-insensitive name filter over
+  the current directory's listing.
+- **File viewer** - scrollable, line-numbered.
+- **Editor** - press `e` while viewing a file to edit it in place: cursor
+  movement, character insert/delete, newline splitting, and `ctrl+s` to
+  save. Saves go through a same-directory temp-file-then-rename, so a
+  mid-write failure never leaves a half-written file on disk.
+- **Back navigation** - `Escape` (or `←`/`h`) steps back one directory level
+  at a time, restoring your selection to wherever you drilled in from,
+  before finally closing the overlay once you're back at the start.
+  `Escape` also steps back out of search, view, and edit modes the same way.
 
-Deliberately scoped down from the Web sibling's full editor: no editing, no
-cross-file search, no git diff, no Markdown rendering. Those are real,
-separate follow-up work once this seam has a second real consumer to
-generalize from.
+Deliberately still not built: cross-file/recursive search, git diff,
+Markdown rendering, syntax highlighting. Syntax highlighting in particular
+was evaluated and skipped deliberately - see the top-of-file comment in
+`lib/index.js` for why (it needs a different rendering model than this
+plugin's plain pi-tui `Component` contract provides).
 
 ## Install
 
