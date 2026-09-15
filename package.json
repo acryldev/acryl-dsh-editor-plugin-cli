@@ -1,6 +1,6 @@
 {
   "name": "acryl-dsh-editor-plugin-cli",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "DSH TUI plugin: a native /files command - browse, view, and edit files from acryl-cli's own terminal UI.",
   "type": "module",
   "repository": {

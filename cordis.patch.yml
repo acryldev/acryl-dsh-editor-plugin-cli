@@ -16,5 +16,5 @@
 # to compose or serve.
 
 - insert:
-    - id: dsh-editor-cli
+    - id: acryl-dsh-editor-plugin-cli
       name: 'acryl-dsh-editor-plugin-cli'
